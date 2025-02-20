@@ -2,18 +2,6 @@ const inputStyles = "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm 
 const labelStyles = "block mb-2 text-sm font-medium"
 const buttonStyles = "w-auto bg-amber-500 hover:bg-amber-700 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-md px-2.5 py-1.5 text-center"
 
-export type FormDefinitionProps = {
-    id : string
-    componentType : string
-    elementStyles : string 
-    type? : string
-    validationId? : string 
-    labelStyles? : string 
-    placeholder? : string 
-    label? : string 
-    textContent? : string
-}
-
 export const logInFormDefinition = [
     {
         type: "text", 

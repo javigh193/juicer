@@ -1,10 +1,6 @@
-interface Props  {
-    elementStyles : string
-    id : string
-    textContent? : string
-}
+import { SubmitProps } from "../../../models/formTypes"
 
-export const FormElementSubmit : React.FC<Props>  = 
+export const FormElementSubmit : React.FC<SubmitProps>  = 
 ({
     id,
     elementStyles,

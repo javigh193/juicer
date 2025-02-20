@@ -1,11 +1,8 @@
-import { FormDefinitionProps } from "./formDefinitions";
+import { type FormDefinitionProps } from "../../models/formTypes";
 import { FormFactory } from "./FormFactory";
 
-interface Props {
-    formDefinition: FormDefinitionProps[]
-}
 
-export const LogInForm: React.FC<Props> = ({
+export const LogInForm: React.FC<{formDefinition: FormDefinitionProps[]}> = ({
     formDefinition
 }) => {
     return (

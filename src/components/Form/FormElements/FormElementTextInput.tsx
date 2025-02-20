@@ -1,14 +1,6 @@
-interface Props  {
-    label? : string
-    labelStyles? : string
-    type? : string
-    elementStyles? : string
-    id : string
-    placeholder? : string
-    validationId? : string
-}
+import { TextInputProps } from "../../../models/formTypes"
 
-export const FormElementTextInput : React.FC<Props>  = 
+export const FormElementTextInput : React.FC<TextInputProps>  = 
 ({
     label,
     labelStyles,

@@ -1,14 +1,6 @@
-interface Props  {
-    id : string
-    label? : string
-    labelStyles? : string
-    type? : string
-    elementStyles : string
-    placeholder? : string
-    validationId? : string
-}
+import { PasswordProps } from "../../../models/formTypes"
 
-export const FormElementPassword : React.FC<Props>  = 
+export const FormElementPassword : React.FC<PasswordProps>  = 
 ({
     label,
     labelStyles,
