@@ -1,6 +1,10 @@
+# Juicer
+
+The purpose of this project is to serve as a playground to get familiarized with several technologies and practice design patterns. This document will serve as a kind of log book where the different steps beeing taken are listed and the reasoning behind them explained when deemed worthy of it. 
+
 # React + TypeScript + Vite
 
-Project has been created with Vite as bundler and Babel is beeing used for Fast Refresh:
+The project has been created with Vite as bundler and Babel is beeing used for Fast Refresh:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 
@@ -46,3 +50,10 @@ In order to visit my locally hosted application, I set up its url as an environm
 
 After that i was able to visit it from my spec file. At this point the project was set for both component and e2e testing with Cypress.
 
+# Design Patterns
+
+## Factory Pattern
+
+This pattern consists in boilerplating how a certain kind of object should be created inside a <b>factory object</b> and then instanciating particular cases according to the requirements in each call to said factory. 
+
+In this project this pattern is applied to the creation of the different forms used in it. 
