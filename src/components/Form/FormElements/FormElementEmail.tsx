@@ -1,6 +1,6 @@
-import { PasswordProps } from "../../../models/formTypes"
+import { EmailProps } from "../../../models/formTypes"
 
-export const FormElementPassword : React.FC<PasswordProps>  = 
+export const FormElementEmail : React.FC<EmailProps>  = 
 ({
     label,
     labelStyles,
