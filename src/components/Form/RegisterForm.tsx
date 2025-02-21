@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
+// Validation schema for the form
+// Each validated fild must have a corresponding validateId in the form definition
 const validation = Yup.object().shape({
     userName: Yup.string().required("Username is required"),
     // default email() validation was not strict enough
@@ -13,6 +15,8 @@ const validation = Yup.object().shape({
     password: Yup.string().required("Password is required")
 })
 
+// Form definition can be found in src/components/Form/formDefinitions.ts
+// It provides the recipe for the elements that will be rendered in the form
 export const RegisterForm: React.FC<{formDefinition: FormDefinitionProps[]}> = ({
     formDefinition
 }) => {

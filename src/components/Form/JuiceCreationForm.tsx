@@ -4,12 +4,16 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
+// Validation schema for the form
+// Each validated fild must have a corresponding validateId in the form definition
 const validation = Yup.object().shape({
     name: Yup.string().required("The juice must have a name"),
     fruits: Yup.string().required("The juice must contain at least one fruit"),
     creatorName: Yup.string().required("Name of the creator is missing")
 })
 
+// Form definition can be found in src/components/Form/formDefinitions.ts
+// It provides the recipe for the elements that will be rendered in the form
 export const JuiceCreationForm: React.FC<{formDefinition: FormDefinitionProps[]}> = ({
     formDefinition
 }) => {
@@ -22,10 +26,10 @@ export const JuiceCreationForm: React.FC<{formDefinition: FormDefinitionProps[]}
 
     const createJuice = () => {return null}
 
-    
     const handleCreate = () => {
         createJuice()
     }
+
     return (
         <>
         <div className="flex flex-col justify-self-center text-center overflow-hidden">
