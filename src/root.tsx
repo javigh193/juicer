@@ -4,13 +4,9 @@ import {
     Outlet,
     Scripts,
     ScrollRestoration,
-  } from "react-router";
+  } from "react-router"
   
-  export function Layout({
-    children,
-  }: {
-    children: React.ReactNode;
-  }) {
+  export function Layout({children}: {children: React.ReactNode}) {
     return (
       <html lang="en">
         <head>
@@ -29,10 +25,10 @@ import {
           <Scripts />
         </body>
       </html>
-    );
+    )
   }
   
   export default function Root() {
-    return <Outlet />;
+    return <Outlet />
   }
   
