@@ -1,7 +1,7 @@
 import { FruitsCarrousel } from "../components/Fruit/FruitsCarrousel"
 import { JuiceMinimalCarrousel } from "../components/Juice/JuiceMinimalCarrousel"
 import { type Fruit } from "../models/fruit"
-import { Juice } from "../models/Juice"
+import { Juice } from "../models/juice"
 import { fetchFruits } from "../services/fruitService"
 import { fetchJuices } from "../services/juiceService"
 
@@ -12,17 +12,24 @@ interface LoaderData {
 
 // eslint-disable-next-line react-refresh/only-export-components
 export async function clientLoader(): Promise<LoaderData> {
-    const fruits = await fetchFruits()
-    const juices = await fetchJuices()
-
+  const fruits = await fetchFruits()
+  const juices = await fetchJuices()
+  if (fruits && juices){
     return {
-        fruits: fruits,
-        juices: juices
+      fruits: fruits,
+      juices: juices
     }
+  }
+  
+  // Errors are handled in the API service
+  return {
+    fruits: [],
+    juices: []
+  } 
 }
 
 interface ComponentProps {
-    loaderData: LoaderData
+  loaderData: LoaderData
 }  
 
 export default function Component({ loaderData }: ComponentProps) {
