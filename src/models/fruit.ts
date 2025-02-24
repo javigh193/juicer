@@ -4,13 +4,33 @@ export type Fruit = {
     family: string;
     order: string;
     genus: string;
-    nutritions: Nutritions;
+    nutritions: Nutritions
 }
 
 export type Nutritions = {
-    calories: number;
-    fat: number;
-    sugar: number;
-    carbohydrates: number;
-    protein: number;
+    calories: number
+    fat: number
+    sugar: number
+    carbohydrates: number
+    protein: number
+}
+
+export interface FruitMinimalProps {
+    fruit: Fruit
+}
+
+export interface FruitSelectableProps {
+    fruit: Fruit,
+    selectedFruits: string,
+    updateFruits: (fruitName: string, selectedFruits: string) => void 
+}
+
+export interface FruitCarrouselProps {
+    fruits: Fruit[]
+}
+
+export interface FruitSelectableCarrouselProps {
+    fruits: Fruit[],
+    selectedFruits: string,
+    updateFruits: (fruitName: string, selectedFruits: string) => void
 }

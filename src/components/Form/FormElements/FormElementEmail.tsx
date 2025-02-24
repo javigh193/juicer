@@ -1,16 +1,16 @@
-import { EmailProps } from "../../../models/formTypes"
+import { EmailProps } from "../../../models/form"
 
 export const FormElementEmail : React.FC<EmailProps>  = 
-({
-    label,
-    labelStyles,
-    type,
-    elementStyles,
-    id,
-    placeholder,
-    validationId
-
-}) => {
+({register, ...props}) => {
+    const {        
+        label,
+        labelStyles,
+        type,
+        elementStyles,
+        id,
+        placeholder,
+        validationId,
+    } = props 
     
     return (
         <div>
@@ -22,6 +22,7 @@ export const FormElementEmail : React.FC<EmailProps>  =
             id={id}
             className={elementStyles}
             placeholder={placeholder}
+            {...register(validationId)}
             />
       </div>
     )

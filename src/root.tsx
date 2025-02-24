@@ -5,6 +5,7 @@ import {
     Scripts,
     ScrollRestoration,
   } from "react-router"
+import { UserProvider } from "./context/useAuth"
   
   export function Layout({children}: {children: React.ReactNode}) {
     return (
@@ -29,6 +30,10 @@ import {
   }
   
   export default function Root() {
-    return <Outlet />
+    return (
+      <UserProvider>
+        <Outlet />
+      </UserProvider>
+    )
   }
   

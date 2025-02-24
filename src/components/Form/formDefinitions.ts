@@ -94,22 +94,26 @@ export const juiceCreationFormDefinition = [
     },
 
     {
-        type: "text", 
+        type: "fruits", 
         id: "fruits", 
         validationId: "fruits",
         elementStyles: inputStyles,
         label: "Choose your fruits from our catalog above", 
         labelStyles: labelStyles, 
-        placeholder: "Fruits",      
-        componentType: 'text'
+        placeholder: "Fruits",
+        // The value of the fruits field will be set by the JuiceCreationForm component
+        value: "",
+        componentType: 'fruitSelection'
     },
 
     {
-        type: "hidden", 
+        type: "text", 
         id: "creatorName", 
         validationId: "creatorName",
         elementStyles: "hidden",
-        componentType: 'text'
+        // The value of the creatorName field will be set by the JuiceCreationForm component
+        value: "",
+        componentType: 'creator'
     },
 
     {

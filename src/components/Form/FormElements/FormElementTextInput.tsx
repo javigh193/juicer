@@ -1,4 +1,4 @@
-import { TextInputProps } from "../../../models/formTypes"
+import { TextInputProps } from "../../../models/form"
 
 export const FormElementTextInput : React.FC<TextInputProps> = 
     ({register, ...props}) => {
