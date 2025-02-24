@@ -1,11 +1,19 @@
+import axios from "axios"
+import { handleError, throwAxiosError } from "../helpers/errorHandler"
 import { type Fruit } from "../models/fruit"
 
-export const fetchFruits = async(): Promise<Fruit[]> => {
-    const res = await fetch("/api/v1/fruits")
-    if (!res.ok) {
-        console.error('Error fetching fruits')
-        return []
+/*
+    If an error is catched, it is analyzed and a custom error object is passed
+    to the handler to perform the neccessary operations.
+*/
+
+// GET all the fruits through an endpoint proxy to a third party API
+export const fetchFruits = async () => {
+    try {
+        const res = await axios.get<Fruit[]>("/api/v1/fruits")
+        .catch((error) =>  throwAxiosError(error))
+        if (res) {return  res.data}
+    } catch (error) {
+        handleError(error)
     }
-    const fruits = await res.json() as Fruit[]
-    return fruits
 }
