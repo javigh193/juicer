@@ -1,4 +1,4 @@
-import { SubmitProps } from "../../../models/formTypes"
+import { SubmitProps } from "../../../models/form"
 
 export const FormElementSubmit : React.FC<SubmitProps>  = 
 ({

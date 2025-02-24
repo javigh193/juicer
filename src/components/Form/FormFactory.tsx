@@ -1,5 +1,7 @@
-import { FormFactoryProps } from "../../models/formTypes";
+import { FormFactoryProps } from "../../models/form";
+import { FormElementCreator } from "./FormElements/FormElementCreator";
 import { FormElementEmail } from "./FormElements/FormElementEmail";
+import { FormElementFruitSelection } from "./FormElements/FormElementFruitSelection";
 import { FormElementPassword } from "./FormElements/FormElementPassword"
 import { FormElementSubmit } from "./FormElements/FormElementSubmit"
 import { FormElementTextInput } from "./FormElements/FormElementTextInput"
@@ -16,6 +18,10 @@ export const FormFactory: React.FC<FormFactoryProps> = ({ field, register }) => 
                 return <FormElementPassword {...fieldProps} register={register} />
             case 'email':
                 return <FormElementEmail {...fieldProps} register={register} />
+            case 'fruitSelection':
+                return <FormElementFruitSelection {...fieldProps} register={register} />
+            case 'creator':
+                return <FormElementCreator {...fieldProps} register={register} />
             case 'submit':
                 return <FormElementSubmit {...fieldProps} />
             default:

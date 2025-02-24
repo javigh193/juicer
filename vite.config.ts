@@ -1,11 +1,19 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { reactRouter } from "@react-router/dev/vite"
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    // Disables react-router plugin when running Cypress tests
+    process.env.CYPRESS_INTERNAL_ENV === undefined && reactRouter(),
     tailwindcss(),
-  ]
+  ],
+  
+  server: {
+    proxy: {
+      '/api': 'http://localhost:8080'
+    }
+  },
+  
 })

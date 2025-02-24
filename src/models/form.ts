@@ -11,6 +11,7 @@ export type FormDefinitionProps = {
     placeholder? : string 
     label? : string 
     textContent? : string
+    value? : string
 }
 
 export type TextInputProps = 
@@ -25,6 +26,16 @@ export type PasswordProps =
 
 export type EmailProps = 
     Pick<FormDefinitionProps, 'label' | 'labelStyles' | 'type' | 'elementStyles'| 'id' | 'placeholder' | 'validationId'> 
+    & 
+    Pick<FormFactoryProps, 'register'>
+
+export type FruitSelectionProps = 
+    Pick<FormDefinitionProps, 'label' | 'labelStyles' | 'type' | 'elementStyles'| 'id' | 'placeholder' | 'validationId' | 'value'> 
+    & 
+    Pick<FormFactoryProps, 'register'>
+
+export type CreatorInputProps = 
+    Pick<FormDefinitionProps, 'type' | 'elementStyles'| 'id' | 'validationId' | 'value'> 
     & 
     Pick<FormFactoryProps, 'register'>
 

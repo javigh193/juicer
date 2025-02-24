@@ -1,8 +1,10 @@
-import { type FormDefinitionProps } from "../../models/formTypes"
+import { type FormDefinitionProps } from "../../models/form"
 import { FormFactory } from "./FormFactory"
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+import { useAuth } from "../../context/useAuth"
+import { Link } from "react-router"
 
 // Validation schema for the form
 // Each validated fild must have a corresponding validateId in the form definition
@@ -23,11 +25,11 @@ export const LogInForm: React.FC<{formDefinition: FormDefinitionProps[]}> = ({
         formState: {errors}
     } = useForm({resolver: yupResolver(validation)})
 
-    const loginUser = () => {return null}
+    const {loginUser} = useAuth()
 
     
-    const handleLogin = () => {
-        loginUser()
+    const handleLogin = (form: { userName: string; password: string }) => {
+        loginUser(form.userName, form.password)
     }
 
     return (
@@ -54,9 +56,9 @@ export const LogInForm: React.FC<{formDefinition: FormDefinitionProps[]}> = ({
                 </form>
                 <p data-cy-id="sign-up-call" className="text-sm font-light text-center">
                     Don’t have an account yet?{" "}
-{/*                     <Link to="/register" className="font-medium text-primary-600 hover:underline">
+                    <Link to="/register" className="font-medium text-primary-600 hover:underline">
                         Sign up
-                    </Link> */}
+                    </Link>
                 </p>
             </div>
           </div>

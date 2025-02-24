@@ -56,6 +56,6 @@ After that i was able to visit it from my spec file. At this point the project w
 
 This pattern consists in boilerplating how a certain kind of object should be created inside a <b>factory object</b> and then instanciating particular cases according to the requirements in each call to said factory. 
 
-In this project this pattern is applied to the creation of the different forms used in it. 
+In this project this pattern is applied to the creation of the different forms. Lets see how it applies to the creation of the login form:
 
----> Diagram here explaining how it is done <-----
+First we need to define the Factory...
